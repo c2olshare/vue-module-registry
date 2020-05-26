@@ -1,0 +1,29 @@
+databaseChangeLog:
+  - changeSet:
+      id: 2020-05-18-00-init-database
+      author: MaJing
+      changes:
+        - sqlFile:
+            dbms: mysql
+            encoding: utf8
+            path: database/sql/init-mysql.sql
+  - changeSet:
+      id: 2020-05-18-01-preset-namespace
+      author: MaJing
+      changes:
+        - sql:
+            INSERT INTO `t_vmr_namespace`(`id`, `code`, `name`, `preset`, `create_time`, `update_time`, `lock_version`)VALUES ('37503d06de1241068df612bb07d6b128', 'default', '默认', b'1', '2020-05-26 22:12:23.942000', '2020-05-26 22:12:23.942000', 0);
+        - sql:
+            INSERT INTO `t_vmr_namespace`(`id`, `code`, `name`, `preset`, `create_time`, `update_time`, `lock_version`) VALUES ('8408c5715ee941f6a0c1b27449dce0be', 'dev', '开发环境', b'0', '2020-05-26 22:12:23.943000', '2020-05-26 22:12:23.943000', 0);
+        - sql:
+            INSERT INTO `t_vmr_namespace`(`id`, `code`, `name`, `preset`, `create_time`, `update_time`, `lock_version`) VALUES ('a1a6640107134d81adcaed2d6b1e17cd', 'test', '测试环境', b'0', '2020-05-26 22:12:23.944000', '2020-05-26 22:12:23.944000', 0);
+        - sql:
+            INSERT INTO `t_vmr_namespace`(`id`, `code`, `name`, `preset`, `create_time`, `update_time`, `lock_version`) VALUES ('aa088325ca254d598ae3ab3e6c4bbeef', 'uat', '预发布环境', b'0', '2020-05-26 22:12:23.945000', '2020-05-26 22:12:23.945000', 0);
+        - sql:
+            INSERT INTO `t_vmr_namespace`(`id`, `code`, `name`, `preset`, `create_time`, `update_time`, `lock_version`) VALUES ('dd77d62ef64d48d2bbc869e5f1ab2394', 'prod', '线上环境', b'0', '2020-05-26 22:12:23.946000', '2020-05-26 22:12:23.946000', 0);
+  - changeSet:
+      id: 2020-05-18-02-preset-admin-user
+      author: MaJing
+      changes:
+        - sql:
+            INSERT INTO `t_vmr_user`(`id`, `username`, `password`, `create_time`, `update_time`, `lock_version`) VALUES ('37503d06de1241068df612bb07d6b128', 'admin', '$2a$10$5ioriFhekMtw4n9mCP4Lne.A9VkjPIoU8IK9pIYlau3GIZ9sF7cVm', '2020-05-26 22:06:18.000000', '2020-05-26 22:06:22.000000', 0);

@@ -1,0 +1,28 @@
+server:
+  port: ${vmr.web.port:8989}
+spring:
+  servlet:
+    multipart:
+      max-request-size: 100MB
+      max-file-size: 100MB
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://${vmr.database.url:127.0.0.1:5536}/${vmr.database.name:vmr}?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=GMT%2b8
+    username: ${vmr.database.username:root}
+    password: ${vmr.database.password:123456}
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL57Dialect
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate:
+        show_sql: false
+        format_sql: true
+  liquibase:
+    change-log: classpath:/database/changelog/db.changelog.yaml
+    database-change-log-table: t_database_changelog
+    database-change-log-lock-table: t_database_changelog_lock
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+    default-property-inclusion: non_null

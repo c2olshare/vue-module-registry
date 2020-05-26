@@ -1,0 +1,3 @@
+databaseChangeLog:
+  - include:
+      file: database/changelog/module/1.0/200518-init.yaml
