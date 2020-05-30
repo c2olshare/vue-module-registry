@@ -28,7 +28,7 @@
       <router-view></router-view>
     </div>
     <div class="vmr-layout-footer">
-      <p class="vmr-footer-power">Powered by <a href="https://c2olshare.com" target="_blank">C2olShare</a> / 0.0.1</p>
+      <p class="vmr-footer-power">Powered by <a href="https://c2olshare.com" target="_blank">C2olShare</a> / 0.1.0</p>
     </div>
   </div>
 </template>
