@@ -1,10 +1,15 @@
 server:
   port: ${vmr.web.port:8989}
+  compression:
+    enabled: true
 spring:
   servlet:
     multipart:
       max-request-size: 100MB
       max-file-size: 100MB
+  resources:
+    cache:
+      period: P30D
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://${vmr.database.url:127.0.0.1:5536}/${vmr.database.name:vmr}?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=GMT%2b8
