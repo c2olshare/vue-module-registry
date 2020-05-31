@@ -25,7 +25,7 @@
       </div>
     </div>
     <div class="vmr-login-footer">
-      <p>Powered by <a href="https://c2olshare.com" target="_blank">C2olShare</a> / 0.1.0</p>
+      <p>Powered by <a href="https://c2olshare.com" target="_blank">C2olShare</a> / 0.2.0</p>
     </div>
     <vue-particles class="vmr-login-background"></vue-particles>
   </div>
